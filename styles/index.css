@@ -1,0 +1,270 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@300;600;700&display=swap");
+a {
+  text-decoration: none;
+  color: #3c409f;
+}
+
+ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.display-1 {
+  font-size: 2.81rem;
+  font-weight: 700;
+}
+
+.heading {
+  font-size: 1.875rem;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+.sub-heading {
+  font-size: 1.25rem;
+  font-weight: 600;
+  text-transform: uppercase;
+}
+
+.text-primary {
+  color: #3b3f9e;
+}
+
+.text-light {
+  color: #ffffff;
+}
+
+.bg-primary {
+  background-color: #3b3f9e;
+}
+
+.bg-light {
+  background-color: #ffffff;
+}
+
+.text-upper {
+  text-transform: uppercase;
+}
+
+.text-bold {
+  font-weight: 700;
+}
+
+.text-center {
+  text-align: center;
+}
+
+.text-right {
+  text-align: right;
+}
+
+.btn {
+  height: 3rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0 1rem;
+}
+
+.m-0 {
+  margin: 0;
+}
+
+.m-1 {
+  margin: 0.5rem;
+}
+
+.m-2 {
+  margin: 1rem;
+}
+
+.ml-1 {
+  margin-left: 0.5rem;
+}
+
+.ml-2 {
+  margin-left: 1rem;
+}
+
+.mr-1 {
+  margin-right: 0.5rem;
+}
+
+.mr-2 {
+  margin-right: 1rem;
+}
+
+.p-0 {
+  padding: 0;
+}
+
+.p-1 {
+  padding: 0.5rem;
+}
+
+.p-2 {
+  padding: 1rem;
+}
+
+.pl-1 {
+  padding-left: 0.5rem;
+}
+
+.pl-2 {
+  padding-left: 1rem;
+}
+
+.pr-1 {
+  padding-right: 0.5rem;
+}
+
+.pr-2 {
+  padding-right: 1rem;
+}
+
+.py-1 {
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
+}
+
+.py-2 {
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+}
+
+.d-flex {
+  display: flex;
+}
+
+.justify-center {
+  justify-content: center;
+}
+
+.justify-between {
+  justify-content: space-between;
+}
+
+.align-center {
+  align-items: center;
+}
+
+.container {
+  width: 100%;
+  max-width: 90%;
+  margin: 0 auto;
+}
+
+@media screen and (min-width: 1024px) {
+  .container {
+    max-width: 1000px;
+  }
+}
+
+*,
+html {
+  margin: 0;
+  padding: 0;
+  font-size: 14px;
+}
+
+@media screen and (min-width: 768px) {
+  *,
+  html {
+    font-size: 16px;
+  }
+}
+
+body {
+  font-family: Montserrat;
+}
+
+header nav .nav-brand {
+  flex-grow: 1;
+}
+
+header nav .nav {
+  flex-grow: 1;
+}
+
+main .banner {
+  background: url("../images/banner-bg.png") no-repeat;
+  height: 90vh;
+}
+
+main .banner .banner-wrapper {
+  background-color: rgba(59, 63, 158, 0.5);
+  height: inherit;
+}
+
+main .banner .banner-wrapper .container {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  height: 100%;
+}
+
+@media screen and (min-width: 768px) {
+  main .banner .banner-wrapper .container h1 {
+    margin-bottom: 4rem;
+  }
+}
+
+main .banner .box {
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+  position: relative;
+}
+
+main .banner .box p {
+  font-size: 0.8rem;
+  line-height: 1.4;
+}
+
+main .banner .box .box-item {
+  background-color: #ffffff;
+  position: relative;
+  cursor: pointer;
+  transition: 0.5s background-color ease-in-out;
+}
+
+main .banner .box .box-item .box-heading {
+  margin: 1rem 0;
+  color: #3b3f9e;
+  font-weight: 600;
+  font-size: 1rem;
+}
+
+main .banner .box .box-item:hover {
+  background-color: #3b3f9e;
+  color: #ffffff;
+}
+
+main .banner .box .box-item:hover .box-heading {
+  color: #ffffff;
+}
+
+main .banner .box .box-item-wrapper {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  padding: 1rem;
+}
+
+main .banner .box .box-item-wrapper img {
+  width: 100%;
+  max-width: 4rem;
+  margin: 0 auto;
+}
+
+main .banner .box .box-item.active {
+  background-color: #3b3f9e;
+  transition: 0.5s all ease-in-out;
+  color: #ffffff;
+  transform: translateY(-30px);
+}
+
+main .banner .box .box-item.active .box-heading {
+  color: #ffffff;
+}
