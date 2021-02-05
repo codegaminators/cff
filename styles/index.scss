@@ -7,6 +7,7 @@ html {
   margin: 0;
   padding: 0;
   font-size: 14px;
+  scroll-behavior: smooth;
   @media screen and (min-width: 768px) {
     font-size: 16px;
   }
@@ -18,6 +19,9 @@ body {
 
 header {
   nav {
+    .nav-link {
+      font-weight: bold;
+    }
     .nav-brand {
       flex-grow: 1;
     }
@@ -30,17 +34,34 @@ header {
 main {
   .banner {
     background: url("../images/banner-bg.png") no-repeat;
-    height: 90vh;
+    height: 50vh;
+    background-size: cover;
+    @media screen and (min-width: 768px) {
+      height: 90vh;
+    }
     .banner-wrapper {
       background-color: rgba($primary, 0.5);
       height: inherit;
 
       .container {
+        // height: 100%;
         display: flex;
         flex-direction: column;
-        justify-content: flex-end;
+
         height: 100%;
+        // text-align: center;
+        // background-color: red;
+        .banner-footer {
+          font-weight: bold;
+          font-size: 1rem;
+          margin-top: 4rem;
+          text-transform: lowercase;
+          font-style: italic;
+        }
         @media screen and (min-width: 768px) {
+          justify-content: center;
+          align-items: center;
+          justify-content: flex-end;
           h1 {
             margin-bottom: 4rem;
           }
@@ -48,8 +69,11 @@ main {
       }
     }
     .box {
-      display: flex;
-      justify-content: space-between;
+      display: none;
+      @media screen and (min-width: 768px) {
+        display: flex;
+        justify-content: space-between;
+      }
       gap: 1rem;
       position: relative;
 
@@ -59,6 +83,7 @@ main {
       }
       .box-item {
         background-color: $light;
+        margin-bottom: 1rem;
         position: relative;
         cursor: pointer;
         transition: 0.5s background-color ease-in-out;
@@ -71,10 +96,12 @@ main {
         }
         &:hover {
           background-color: $primary;
+          transition: 0.5s all ease-in-out;
           color: $light;
           .box-heading {
             color: $light;
           }
+          transform: translateY(-30px);
         }
         &-wrapper {
           display: flex;
@@ -87,15 +114,6 @@ main {
             max-width: 4rem;
             margin: 0 auto;
           }
-        }
-        &.active {
-          background-color: $primary;
-          transition: 0.5s all ease-in-out;
-          color: $light;
-          .box-heading {
-            color: $light;
-          }
-          transform: translateY(-30px);
         }
       }
     }
@@ -157,6 +175,7 @@ main {
       color: $primary;
     }
     .box-wrapper {
+      margin-bottom: 2rem;
       .text-content {
         p {
           margin: 0.8rem 0;
@@ -171,6 +190,7 @@ main {
       @media screen and (min-width: 768px) {
         display: flex;
         // align-items: center;
+        gap: 1.5rem;
         .text-content {
           width: 50%;
         }
@@ -183,5 +203,63 @@ main {
 
   .services {
     @extend .about;
+  }
+
+  .contact {
+    padding: 1rem 0;
+    .contact-heading {
+      margin-bottom: 2rem;
+      margin-top: 1rem;
+    }
+    .form-control {
+      display: block;
+      width: 100%;
+      margin-bottom: 1rem;
+      padding: 0.7rem;
+      // &:focus {
+      //   border: none;
+      //   outline: none;
+      // }
+    }
+    form {
+      width: 100%;
+      max-width: 500px;
+      margin: 0 auto;
+    }
+    &-bg {
+      height: 20vh;
+      background-image: url("/images/pic-7.png");
+      background-repeat: no-repeat;
+      background-size: cover;
+      margin-top: 1rem;
+    }
+
+    &-footer {
+      margin-top: 2rem;
+      h1 {
+        @extend .display-1;
+        color: $light;
+        margin-top: 1rem;
+      }
+      &-inner {
+        display: flex;
+        // background-color: red;
+        // flex-direction: column;
+        justify-content: center;
+      }
+      &-wrapper {
+        h6 {
+          margin: 1rem 0;
+        }
+        &_item {
+          display: flex;
+          align-items: flex-start;
+          margin-bottom: 1rem;
+          img {
+            margin-right: 1rem;
+          }
+        }
+      }
+    }
   }
 }

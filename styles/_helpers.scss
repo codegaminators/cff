@@ -12,9 +12,11 @@ ul {
 }
 
 .display-1 {
-  font-size: 2.81rem;
   font-weight: 700;
-  //   line-height: 55px;
+  font-size: 1.5rem;
+  @media screen and (min-width: 768px) {
+    font-size: 2.81rem;
+  }
 }
 
 .heading {
@@ -69,7 +71,20 @@ ul {
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 0 1rem;
+  padding: 0 1.8rem;
+  cursor: pointer;
+
+  &-primary {
+    background-color: $primary;
+    color: $light;
+    border: 1px solid $primary;
+    transition: 0.5s all ease-in-out;
+
+    &:hover {
+      background-color: $light;
+      color: $primary;
+    }
+  }
 }
 
 // Margins

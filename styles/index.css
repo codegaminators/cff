@@ -10,9 +10,15 @@ ul {
   list-style: none;
 }
 
-.display-1 {
-  font-size: 2.81rem;
+.display-1, main .contact-footer h1 {
   font-weight: 700;
+  font-size: 1.5rem;
+}
+
+@media screen and (min-width: 768px) {
+  .display-1, main .contact-footer h1 {
+    font-size: 2.81rem;
+  }
 }
 
 .heading {
@@ -65,7 +71,20 @@ ul {
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 0 1rem;
+  padding: 0 1.8rem;
+  cursor: pointer;
+}
+
+.btn-primary {
+  background-color: #3b3f9e;
+  color: #ffffff;
+  border: 1px solid #3b3f9e;
+  transition: 0.5s all ease-in-out;
+}
+
+.btn-primary:hover {
+  background-color: #ffffff;
+  color: #3b3f9e;
 }
 
 .m-0 {
@@ -177,6 +196,7 @@ html {
   margin: 0;
   padding: 0;
   font-size: 14px;
+  scroll-behavior: smooth;
 }
 
 @media screen and (min-width: 768px) {
@@ -190,6 +210,10 @@ body {
   font-family: Montserrat;
 }
 
+header nav .nav-link {
+  font-weight: bold;
+}
+
 header nav .nav-brand {
   flex-grow: 1;
 }
@@ -200,7 +224,14 @@ header nav .nav {
 
 main .banner {
   background: url("../images/banner-bg.png") no-repeat;
-  height: 90vh;
+  height: 50vh;
+  background-size: cover;
+}
+
+@media screen and (min-width: 768px) {
+  main .banner {
+    height: 90vh;
+  }
 }
 
 main .banner .banner-wrapper {
@@ -211,21 +242,39 @@ main .banner .banner-wrapper {
 main .banner .banner-wrapper .container {
   display: flex;
   flex-direction: column;
-  justify-content: flex-end;
   height: 100%;
 }
 
+main .banner .banner-wrapper .container .banner-footer {
+  font-weight: bold;
+  font-size: 1rem;
+  margin-top: 4rem;
+  text-transform: lowercase;
+  font-style: italic;
+}
+
 @media screen and (min-width: 768px) {
+  main .banner .banner-wrapper .container {
+    justify-content: center;
+    align-items: center;
+    justify-content: flex-end;
+  }
   main .banner .banner-wrapper .container h1 {
     margin-bottom: 4rem;
   }
 }
 
 main .banner .box {
-  display: flex;
-  justify-content: space-between;
+  display: none;
   gap: 1rem;
   position: relative;
+}
+
+@media screen and (min-width: 768px) {
+  main .banner .box {
+    display: flex;
+    justify-content: space-between;
+  }
 }
 
 main .banner .box p {
@@ -235,6 +284,7 @@ main .banner .box p {
 
 main .banner .box .box-item {
   background-color: #ffffff;
+  margin-bottom: 1rem;
   position: relative;
   cursor: pointer;
   transition: 0.5s background-color ease-in-out;
@@ -249,7 +299,9 @@ main .banner .box .box-item .box-heading {
 
 main .banner .box .box-item:hover {
   background-color: #3b3f9e;
+  transition: 0.5s all ease-in-out;
   color: #ffffff;
+  transform: translateY(-30px);
 }
 
 main .banner .box .box-item:hover .box-heading {
@@ -267,17 +319,6 @@ main .banner .box .box-item-wrapper img {
   width: 100%;
   max-width: 4rem;
   margin: 0 auto;
-}
-
-main .banner .box .box-item.active {
-  background-color: #3b3f9e;
-  transition: 0.5s all ease-in-out;
-  color: #ffffff;
-  transform: translateY(-30px);
-}
-
-main .banner .box .box-item.active .box-heading {
-  color: #ffffff;
 }
 
 main .global {
@@ -343,6 +384,10 @@ main .about .heading, main .services .heading {
   color: #3b3f9e;
 }
 
+main .about .box-wrapper, main .services .box-wrapper {
+  margin-bottom: 2rem;
+}
+
 main .about .box-wrapper .text-content p, main .services .box-wrapper .text-content p {
   margin: 0.8rem 0;
   font-size: 0.9rem;
@@ -355,6 +400,7 @@ main .about .box-wrapper .image img, main .services .box-wrapper .image img {
 @media screen and (min-width: 768px) {
   main .about .box-wrapper, main .services .box-wrapper {
     display: flex;
+    gap: 1.5rem;
   }
   main .about .box-wrapper .text-content, main .services .box-wrapper .text-content {
     width: 50%;
@@ -362,4 +408,62 @@ main .about .box-wrapper .image img, main .services .box-wrapper .image img {
   main .about .box-wrapper .image, main .services .box-wrapper .image {
     width: 50%;
   }
+}
+
+main .contact {
+  padding: 1rem 0;
+}
+
+main .contact .contact-heading {
+  margin-bottom: 2rem;
+  margin-top: 1rem;
+}
+
+main .contact .form-control {
+  display: block;
+  width: 100%;
+  margin-bottom: 1rem;
+  padding: 0.7rem;
+}
+
+main .contact form {
+  width: 100%;
+  max-width: 500px;
+  margin: 0 auto;
+}
+
+main .contact-bg {
+  height: 20vh;
+  background-image: url("/images/pic-7.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+  margin-top: 1rem;
+}
+
+main .contact-footer {
+  margin-top: 2rem;
+}
+
+main .contact-footer h1 {
+  color: #ffffff;
+  margin-top: 1rem;
+}
+
+main .contact-footer-inner {
+  display: flex;
+  justify-content: center;
+}
+
+main .contact-footer-wrapper h6 {
+  margin: 1rem 0;
+}
+
+main .contact-footer-wrapper_item {
+  display: flex;
+  align-items: flex-start;
+  margin-bottom: 1rem;
+}
+
+main .contact-footer-wrapper_item img {
+  margin-right: 1rem;
 }
